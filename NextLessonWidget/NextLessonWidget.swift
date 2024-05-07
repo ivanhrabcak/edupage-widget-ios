@@ -191,7 +191,7 @@ struct NextLessonWidgetEntryView : View {
             } else if entry.lesson.name != "END" {
                 Text(
                     format.string(from: entry.lesson.time.start) + " - " + format.string(from: entry.lesson.time.end)
-                ).font(.system(size: 20))
+                ).font(.system(size: 18))
                 Text(entry.lesson.name)
                     .bold()
                     .font(.system(size: 45))
@@ -219,7 +219,7 @@ struct NextLessonWidget: Widget {
                     .padding()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Next Lesson Widget")
+        .description("Configure your edupage credentials.")
     }
 }
