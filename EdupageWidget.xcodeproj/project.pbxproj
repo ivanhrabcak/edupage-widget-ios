@@ -11,7 +11,56 @@
 		5CE9AA5E2BEAB0DF009EA287 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA5D2BEAB0DF009EA287 /* ContentView.swift */; };
 		5CE9AA602BEAB0E0009EA287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE9AA5F2BEAB0E0009EA287 /* Assets.xcassets */; };
 		5CE9AA632BEAB0E0009EA287 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE9AA622BEAB0E0009EA287 /* Preview Assets.xcassets */; };
+		5CE9AA702BEAB116009EA287 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE9AA6F2BEAB116009EA287 /* Intents.framework */; };
+		5CE9AA732BEAB116009EA287 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA722BEAB116009EA287 /* IntentHandler.swift */; };
+		5CE9AA772BEAB116009EA287 /* NextLessonIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5CE9AA6D2BEAB116009EA287 /* NextLessonIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5CE9AA822BEAB150009EA287 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE9AA812BEAB150009EA287 /* WidgetKit.framework */; };
+		5CE9AA842BEAB150009EA287 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE9AA832BEAB150009EA287 /* SwiftUI.framework */; };
+		5CE9AA872BEAB150009EA287 /* NextLessonWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA862BEAB150009EA287 /* NextLessonWidgetBundle.swift */; };
+		5CE9AA892BEAB150009EA287 /* NextLessonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA882BEAB150009EA287 /* NextLessonWidget.swift */; };
+		5CE9AA8B2BEAB151009EA287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE9AA8A2BEAB151009EA287 /* Assets.xcassets */; };
+		5CE9AA8F2BEAB151009EA287 /* NextLessonWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5CE9AA802BEAB150009EA287 /* NextLessonWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5CE9AA942BEAB23E009EA287 /* NextLessonConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA932BEAB23E009EA287 /* NextLessonConfigurationIntent.intentdefinition */; };
+		5CE9AA972BEAB4F8009EA287 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5CE9AA962BEAB4F8009EA287 /* Alamofire */; };
+		5CE9AA9E2BEAB6B6009EA287 /* Edupage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA9B2BEAB6B6009EA287 /* Edupage.swift */; };
+		5CE9AA9F2BEAB708009EA287 /* Edupage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA9B2BEAB6B6009EA287 /* Edupage.swift */; };
+		5CE9AAA12BEABA5C009EA287 /* NextLessonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA882BEAB150009EA287 /* NextLessonWidget.swift */; };
+		5CE9AAA52BEABACA009EA287 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5CE9AAA42BEABACA009EA287 /* Alamofire */; };
+		5CE9AAA72BEABAD0009EA287 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5CE9AAA62BEABAD0009EA287 /* Alamofire */; };
+		5CE9AAA82BEABB1D009EA287 /* NextLessonConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA932BEAB23E009EA287 /* NextLessonConfigurationIntent.intentdefinition */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CE9AA752BEAB116009EA287 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE9AA502BEAB0DF009EA287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE9AA6C2BEAB116009EA287;
+			remoteInfo = NextLessonIntent;
+		};
+		5CE9AA8D2BEAB151009EA287 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE9AA502BEAB0DF009EA287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE9AA7F2BEAB150009EA287;
+			remoteInfo = NextLessonWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5CE9AA7B2BEAB116009EA287 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5CE9AA772BEAB116009EA287 /* NextLessonIntent.appex in Embed Foundation Extensions */,
+				5CE9AA8F2BEAB151009EA287 /* NextLessonWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5CE9AA582BEAB0DF009EA287 /* EdupageWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EdupageWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +68,19 @@
 		5CE9AA5D2BEAB0DF009EA287 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CE9AA5F2BEAB0E0009EA287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CE9AA622BEAB0E0009EA287 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5CE9AA6D2BEAB116009EA287 /* NextLessonIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NextLessonIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE9AA6F2BEAB116009EA287 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		5CE9AA722BEAB116009EA287 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		5CE9AA742BEAB116009EA287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE9AA802BEAB150009EA287 /* NextLessonWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NextLessonWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE9AA812BEAB150009EA287 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5CE9AA832BEAB150009EA287 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5CE9AA862BEAB150009EA287 /* NextLessonWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLessonWidgetBundle.swift; sourceTree = "<group>"; };
+		5CE9AA882BEAB150009EA287 /* NextLessonWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLessonWidget.swift; sourceTree = "<group>"; };
+		5CE9AA8A2BEAB151009EA287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CE9AA8C2BEAB151009EA287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE9AA932BEAB23E009EA287 /* NextLessonConfigurationIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = NextLessonConfigurationIntent.intentdefinition; sourceTree = "<group>"; };
+		5CE9AA9B2BEAB6B6009EA287 /* Edupage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edupage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +88,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE9AAA52BEABACA009EA287 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE9AA6A2BEAB116009EA287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE9AA702BEAB116009EA287 /* Intents.framework in Frameworks */,
+				5CE9AAA72BEABAD0009EA287 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE9AA7D2BEAB150009EA287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE9AA972BEAB4F8009EA287 /* Alamofire in Frameworks */,
+				5CE9AA842BEAB150009EA287 /* SwiftUI.framework in Frameworks */,
+				5CE9AA822BEAB150009EA287 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				5CE9AA5A2BEAB0DF009EA287 /* EdupageWidget */,
+				5CE9AA712BEAB116009EA287 /* NextLessonIntent */,
+				5CE9AA852BEAB150009EA287 /* NextLessonWidget */,
+				5CE9AA6E2BEAB116009EA287 /* Frameworks */,
 				5CE9AA592BEAB0DF009EA287 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				5CE9AA582BEAB0DF009EA287 /* EdupageWidget.app */,
+				5CE9AA6D2BEAB116009EA287 /* NextLessonIntent.appex */,
+				5CE9AA802BEAB150009EA287 /* NextLessonWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +154,38 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5CE9AA6E2BEAB116009EA287 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CE9AA6F2BEAB116009EA287 /* Intents.framework */,
+				5CE9AA812BEAB150009EA287 /* WidgetKit.framework */,
+				5CE9AA832BEAB150009EA287 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CE9AA712BEAB116009EA287 /* NextLessonIntent */ = {
+			isa = PBXGroup;
+			children = (
+				5CE9AA722BEAB116009EA287 /* IntentHandler.swift */,
+				5CE9AA742BEAB116009EA287 /* Info.plist */,
+				5CE9AA932BEAB23E009EA287 /* NextLessonConfigurationIntent.intentdefinition */,
+			);
+			path = NextLessonIntent;
+			sourceTree = "<group>";
+		};
+		5CE9AA852BEAB150009EA287 /* NextLessonWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5CE9AA862BEAB150009EA287 /* NextLessonWidgetBundle.swift */,
+				5CE9AA882BEAB150009EA287 /* NextLessonWidget.swift */,
+				5CE9AA8A2BEAB151009EA287 /* Assets.xcassets */,
+				5CE9AA8C2BEAB151009EA287 /* Info.plist */,
+				5CE9AA9B2BEAB6B6009EA287 /* Edupage.swift */,
+			);
+			path = NextLessonWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +196,61 @@
 				5CE9AA542BEAB0DF009EA287 /* Sources */,
 				5CE9AA552BEAB0DF009EA287 /* Frameworks */,
 				5CE9AA562BEAB0DF009EA287 /* Resources */,
+				5CE9AA7B2BEAB116009EA287 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CE9AA762BEAB116009EA287 /* PBXTargetDependency */,
+				5CE9AA8E2BEAB151009EA287 /* PBXTargetDependency */,
+			);
+			name = EdupageWidget;
+			packageProductDependencies = (
+				5CE9AAA42BEABACA009EA287 /* Alamofire */,
+			);
+			productName = EdupageWidget;
+			productReference = 5CE9AA582BEAB0DF009EA287 /* EdupageWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5CE9AA6C2BEAB116009EA287 /* NextLessonIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE9AA782BEAB116009EA287 /* Build configuration list for PBXNativeTarget "NextLessonIntent" */;
+			buildPhases = (
+				5CE9AA692BEAB116009EA287 /* Sources */,
+				5CE9AA6A2BEAB116009EA287 /* Frameworks */,
+				5CE9AA6B2BEAB116009EA287 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = EdupageWidget;
-			productName = EdupageWidget;
-			productReference = 5CE9AA582BEAB0DF009EA287 /* EdupageWidget.app */;
-			productType = "com.apple.product-type.application";
+			name = NextLessonIntent;
+			packageProductDependencies = (
+				5CE9AAA62BEABAD0009EA287 /* Alamofire */,
+			);
+			productName = NextLessonIntent;
+			productReference = 5CE9AA6D2BEAB116009EA287 /* NextLessonIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5CE9AA7F2BEAB150009EA287 /* NextLessonWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE9AA902BEAB151009EA287 /* Build configuration list for PBXNativeTarget "NextLessonWidgetExtension" */;
+			buildPhases = (
+				5CE9AA7C2BEAB150009EA287 /* Sources */,
+				5CE9AA7D2BEAB150009EA287 /* Frameworks */,
+				5CE9AA7E2BEAB150009EA287 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NextLessonWidgetExtension;
+			packageProductDependencies = (
+				5CE9AA962BEAB4F8009EA287 /* Alamofire */,
+			);
+			productName = NextLessonWidgetExtension;
+			productReference = 5CE9AA802BEAB150009EA287 /* NextLessonWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +265,12 @@
 					5CE9AA572BEAB0DF009EA287 = {
 						CreatedOnToolsVersion = 15.3;
 					};
+					5CE9AA6C2BEAB116009EA287 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					5CE9AA7F2BEAB150009EA287 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 				};
 			};
 			buildConfigurationList = 5CE9AA532BEAB0DF009EA287 /* Build configuration list for PBXProject "EdupageWidget" */;
@@ -111,11 +282,16 @@
 				Base,
 			);
 			mainGroup = 5CE9AA4F2BEAB0DF009EA287;
+			packageReferences = (
+				5CE9AA952BEAB4F8009EA287 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 5CE9AA592BEAB0DF009EA287 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5CE9AA572BEAB0DF009EA287 /* EdupageWidget */,
+				5CE9AA6C2BEAB116009EA287 /* NextLessonIntent */,
+				5CE9AA7F2BEAB150009EA287 /* NextLessonWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +303,21 @@
 			files = (
 				5CE9AA632BEAB0E0009EA287 /* Preview Assets.xcassets in Resources */,
 				5CE9AA602BEAB0E0009EA287 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE9AA6B2BEAB116009EA287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE9AA7E2BEAB150009EA287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE9AA8B2BEAB151009EA287 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +333,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5CE9AA692BEAB116009EA287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE9AA942BEAB23E009EA287 /* NextLessonConfigurationIntent.intentdefinition in Sources */,
+				5CE9AAA12BEABA5C009EA287 /* NextLessonWidget.swift in Sources */,
+				5CE9AA732BEAB116009EA287 /* IntentHandler.swift in Sources */,
+				5CE9AA9F2BEAB708009EA287 /* Edupage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE9AA7C2BEAB150009EA287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE9AAA82BEABB1D009EA287 /* NextLessonConfigurationIntent.intentdefinition in Sources */,
+				5CE9AA892BEAB150009EA287 /* NextLessonWidget.swift in Sources */,
+				5CE9AA872BEAB150009EA287 /* NextLessonWidgetBundle.swift in Sources */,
+				5CE9AA9E2BEAB6B6009EA287 /* Edupage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CE9AA762BEAB116009EA287 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE9AA6C2BEAB116009EA287 /* NextLessonIntent */;
+			targetProxy = 5CE9AA752BEAB116009EA287 /* PBXContainerItemProxy */;
+		};
+		5CE9AA8E2BEAB151009EA287 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE9AA7F2BEAB150009EA287 /* NextLessonWidgetExtension */;
+			targetProxy = 5CE9AA8D2BEAB151009EA287 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5CE9AA642BEAB0E0009EA287 /* Debug */ = {
@@ -197,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -267,6 +493,7 @@
 		5CE9AA672BEAB0E0009EA287 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -280,6 +507,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,6 +524,7 @@
 		5CE9AA682BEAB0E0009EA287 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +538,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +546,110 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.hrabcak.EdupageWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5CE9AA792BEAB116009EA287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 579YJNFQAD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NextLessonIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NextLessonIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.hrabcak.EdupageWidget.NextLessonIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5CE9AA7A2BEAB116009EA287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 579YJNFQAD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NextLessonIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NextLessonIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.hrabcak.EdupageWidget.NextLessonIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5CE9AA912BEAB151009EA287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 579YJNFQAD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NextLessonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NextLessonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.hrabcak.EdupageWidget.NextLessonWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5CE9AA922BEAB151009EA287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 579YJNFQAD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NextLessonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NextLessonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.hrabcak.EdupageWidget.NextLessonWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,7 +677,54 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5CE9AA782BEAB116009EA287 /* Build configuration list for PBXNativeTarget "NextLessonIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE9AA792BEAB116009EA287 /* Debug */,
+				5CE9AA7A2BEAB116009EA287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CE9AA902BEAB151009EA287 /* Build configuration list for PBXNativeTarget "NextLessonWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE9AA912BEAB151009EA287 /* Debug */,
+				5CE9AA922BEAB151009EA287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CE9AA952BEAB4F8009EA287 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CE9AA962BEAB4F8009EA287 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CE9AA952BEAB4F8009EA287 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5CE9AAA42BEABACA009EA287 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CE9AA952BEAB4F8009EA287 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5CE9AAA62BEABAD0009EA287 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CE9AA952BEAB4F8009EA287 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CE9AA502BEAB0DF009EA287 /* Project object */;
 }
