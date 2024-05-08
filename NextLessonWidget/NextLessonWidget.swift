@@ -67,40 +67,93 @@ struct Provider: IntentTimelineProvider {
     
     func getTimeline(for configuration: ConfigurationIntentIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
         var entries: [SimpleEntry] = []
+        print(configuration)
         
         var edupage = Edupage()
-        let timetable: Timetable? = try! _unsafeWait {
-            if configuration.username == nil || configuration.password == nil {
-                completion(SimpleEntry.error(s: "Invalid credentials"))
-                
-                return nil
+
+        let resultEntry: SimpleEntry? = try? _unsafeWait {
+            let loginResult = await edupage.login(username: configuration.username ?? "", password: configuration.password ?? "", subdomain: configuration.subdomain ?? "")
+            
+            switch loginResult {
+                case .success:
+                    return nil
+                case .invalidCredentials:
+                    return SimpleEntry(date: Date.now, lesson: Lesson.nullLesson(), message: "Invalid credentials")
+                case .networkError:
+                    return SimpleEntry(date: Date.now, lesson: Lesson.nullLesson(), message: "Network error")
+                case .missingConfiguration:
+                    return SimpleEntry(date: Date.now, lesson: Lesson.nullLesson(), message: "Missing configuration")
             }
-            
-            
-            try? await edupage.login(username: configuration.username!, password: configuration.password!, subdomain: configuration.subdomain)
-            
-            
-            var t = await edupage.getTimetable(date: Date.now)
-            while (t == nil) {
-                t = await edupage.getTimetable(date: Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!)
-            }
-            
-            return t
         }
         
-        
-        if timetable == nil {
-            completion(Timeline(entries: [], policy: .after(
-                Calendar.current.date(
-                    byAdding: .minute,
-                    value: 10,
-                    to: Date.now
-                )!
-            )))
+        if resultEntry != nil {
+            completion(Timeline(
+                entries: [resultEntry!],
+                policy: .after(
+                    Calendar.current.date(
+                        byAdding: .minute,
+                        value: 10,
+                        to: Date.now
+                    )!
+                )
+            ))
+            
             return
         }
         
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        var timetableResult: TimetableResult = try! _unsafeWait {
+            return await edupage.getTimetable(date: Date.now)
+        }
+        
+        var timetable: Timetable? = nil
+        switch timetableResult {
+            case .success(let t):
+                timetable = t
+            case .missingData:
+                completion(Timeline(
+                    entries: [
+                        SimpleEntry(
+                            date: Date.now,
+                            lesson: Lesson.nullLesson(),
+                            message: "Unknown error - missing data"
+                        )
+                    ],
+                    policy: .after(
+                        Calendar.current.date(
+                            byAdding: .minute,
+                            value: 10,
+                            to: Date.now
+                        )!
+                    )
+                ))
+                return
+            case .noTimetableForDate:
+                timetableResult = try! _unsafeWait { return await edupage.getTimetable(date: Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!) }
+        }
+        
+        if timetable == nil {
+            switch timetableResult {
+                case .success(var t):
+                    timetable = t
+                case .missingData:
+                    timetable = nil
+                case .noTimetableForDate:
+                    timetable = nil
+            }
+            
+            
+            if timetable == nil {
+                completion(Timeline(entries: [], policy: .after(
+                    Calendar.current.date(
+                        byAdding: .minute,
+                        value: 10,
+                        to: Date.now
+                    )!
+                )))
+                return
+            }
+        }
+        
         for (i, lesson) in timetable!.lessons.enumerated() {
             entries.append(
                 SimpleEntry(date: lesson.time.start, lesson: lesson)
@@ -124,20 +177,41 @@ struct Provider: IntentTimelineProvider {
             }
         }
         
-        completion(
-            Timeline(
-                entries: entries,
-                policy: .after(
-                    Calendar.current.startOfDay(
-                        for: Calendar.current.date(
-                            byAdding: .day,
-                            value: 1,
-                            to: Date.now
-                        )!
+        if !entries.isEmpty {
+            completion(
+                Timeline(
+                    entries: entries,
+                    policy: .after(
+                        Calendar.current.startOfDay(
+                            for: Calendar.current.date(
+                                byAdding: .day,
+                                value: 1,
+                                to: Date.now
+                            )!
+                        )
                     )
                 )
             )
-        )
+
+        } else {
+            completion(
+                Timeline(
+                    entries: [
+                        SimpleEntry(date: Date.now, lesson: Lesson.nullLesson(), message: "No school for today!")
+                    ],
+                    policy: .after(
+                        Calendar.current.startOfDay(
+                            for: Calendar.current.date(
+                                byAdding: .day,
+                                value: 1,
+                                to: Date.now
+                            )!
+                        )
+                    )
+                )
+            )
+        }
+        
     }
 }
 
@@ -188,6 +262,8 @@ struct NextLessonWidgetEntryView : View {
         VStack {
             if entry.message != nil {
                 Text(entry.message!)
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 15))
             } else if entry.lesson.name != "END" {
                 Text(
                     format.string(from: entry.lesson.time.start) + " - " + format.string(from: entry.lesson.time.end)

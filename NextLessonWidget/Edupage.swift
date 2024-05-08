@@ -18,10 +18,32 @@ struct Lesson {
     let classroom: String
     let time: LessonDuration
     let lessonNumber: Int
+    
+    static func nullLesson() -> Lesson {
+        return Lesson(
+            name: "",
+            classroom: "",
+            time: LessonDuration(start: Date.now, end: Date.now),
+            lessonNumber: -1
+        )
+    }
 }
 
 struct Timetable {
     let lessons: [Lesson]
+}
+
+enum TimetableResult {
+    case success(Timetable)
+    case noTimetableForDate
+    case missingData
+}
+
+enum LoginResult {
+    case success
+    case invalidCredentials
+    case networkError
+    case missingConfiguration
 }
 
 struct Edupage {
@@ -34,25 +56,34 @@ struct Edupage {
         session.sessionConfiguration.httpCookieStorage?.removeCookies(since: Date.distantPast)
     }
     
-    mutating func login(username: String, password: String, subdomain: String?) async throws {
-        
+    mutating func login(username: String, password: String, subdomain: String?) async -> LoginResult {
+      
+        if password == "" || username == "" {
+            return .missingConfiguration
+        }
+      
         let loginSubdomain = (subdomain == "" || subdomain == nil) ? "login1" : subdomain!
         
-        if (username == "" || password == "") {
-            return
-        }
-        
-        let requestUrl = "https://\(loginSubdomain).edupage.org/login/index.php"
-        print(requestUrl)
+        let requestUrl = "https://\(subdomain).edupage.org/login/index.php"
         
         let response = await session.request(requestUrl)
             .serializingString()
             .response
         
+        if response.error != nil {
+            return .networkError
+        }
+        
         cookie = String(response.response!.headers["Set-Cookie"]!.split(separator: "PHPSESSID=")[0].split(separator: ";")[0])
+        let csrfResponse = String(decoding: response.data!, as: UTF8.self)
+        let csrfParts = csrfResponse.split(separator: "name=\"csrfauth\" value=\"")
+        
+        if csrfParts.endIndex < 1 {
+            return .invalidCredentials
+        }
+        
         let csrfToken = String(
-            String(decoding: response.data!, as: UTF8.self)
-                .split(separator: "name=\"csrfauth\" value=\"")[1]
+                csrfParts[1]
                 .split(separator: "\"")[0]
         )
         
@@ -67,9 +98,12 @@ struct Edupage {
             loginRequestUrl,
             method: .post,
             parameters: parameters
-        )
-            .serializingString()
+        ).serializingString()
             .response
+        
+        if loginResponse.error != nil {
+            return .networkError
+        }
         
         let rawData = (String(decoding: loginResponse.data!, as: UTF8.self))
         
@@ -81,8 +115,8 @@ struct Edupage {
             .replacingOccurrences(of: "\r", with: "")
         
         data = try? JSONSerialization.jsonObject(with: jsonString.data(using: .utf8)!) as? [String: Any]
-        
-        return
+
+        return .success
     }
     
     func idToSubject(subjectId: String) -> String {
@@ -103,9 +137,9 @@ struct Edupage {
         return subject["short"]! as! String
     }
     
-    func getTimetable(date: Date) async -> Timetable? {
+    func getTimetable(date: Date) async -> TimetableResult {
         if data == nil {
-            return nil
+            return .missingData
         }
         
         let dateFormat = DateFormatter()
@@ -113,22 +147,22 @@ struct Edupage {
         
         let dp = data?["dp"] as? [String: Any]
         if dp == nil {
-            return nil
+            return .missingData
         }
         
         let dates = dp!["dates"] as? [String: Any]
         if dates == nil {
-            return nil
+            return .missingData
         }
         
         let datePlans = dates![dateFormat.string(from: date)] as? [String: Any]
         if datePlans == nil {
-            return nil
+            return .noTimetableForDate
         }
         
         let plan = datePlans!["plan"] as? [[String: Any]]
         if plan == nil {
-            return nil
+            return .missingData
         }
         
         var lessons = [Lesson]()
@@ -186,6 +220,6 @@ struct Edupage {
             
         }
         
-        return Timetable(lessons: lessons)
+        return .success(Timetable(lessons: lessons))
     }
 }
