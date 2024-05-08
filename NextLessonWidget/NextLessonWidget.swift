@@ -77,11 +77,11 @@ struct Provider: IntentTimelineProvider {
             }
             
             
-            try? await edupage.login(username: configuration.username!, password: configuration.password!, subdomain: configuration.subdomain!)
+            try? await edupage.login(username: configuration.username!, password: configuration.password!, subdomain: configuration.subdomain)
             
             
             var t = await edupage.getTimetable(date: Date.now)
-            if t == nil {
+            while (t == nil) {
                 t = await edupage.getTimetable(date: Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!)
             }
             

@@ -34,12 +34,15 @@ struct Edupage {
         session.sessionConfiguration.httpCookieStorage?.removeCookies(since: Date.distantPast)
     }
     
-    mutating func login(username: String, password: String, subdomain: String) async throws {
-        if subdomain == "" {
+    mutating func login(username: String, password: String, subdomain: String?) async throws {
+        
+        let loginSubdomain = (subdomain == "" || subdomain == nil) ? "login1" : subdomain!
+        
+        if (username == "" || password == "") {
             return
         }
         
-        let requestUrl = "https://\(subdomain).edupage.org/login/index.php"
+        let requestUrl = "https://\(loginSubdomain).edupage.org/login/index.php"
         print(requestUrl)
         
         let response = await session.request(requestUrl)
@@ -59,7 +62,7 @@ struct Edupage {
             "password": password
         ]
         
-        let loginRequestUrl = "https://\(subdomain).edupage.org/login/edubarLogin.php"
+        let loginRequestUrl = "https://\(loginSubdomain).edupage.org/login/edubarLogin.php"
         let loginResponse = await session.request(
             loginRequestUrl,
             method: .post,
@@ -78,6 +81,8 @@ struct Edupage {
             .replacingOccurrences(of: "\r", with: "")
         
         data = try? JSONSerialization.jsonObject(with: jsonString.data(using: .utf8)!) as? [String: Any]
+        
+        return
     }
     
     func idToSubject(subjectId: String) -> String {
