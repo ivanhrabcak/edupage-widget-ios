@@ -92,10 +92,14 @@ struct Edupage {
         return subject["short"]! as! String
     }
     
-    func idToClassroom(classroomId: String) -> String {
+    func idToClassroom(classroomId: String?) -> String {
+        if classroomId == nil {
+            return ""
+        }
+        
         let dbi = data!["dbi"] as! [String: Any]
         let subjects = dbi["classrooms"]! as! [String: Any]
-        let subject = subjects[classroomId]! as! [String: Any]
+        let subject = subjects[classroomId!]! as! [String: Any]
         return subject["short"]! as! String
     }
     
@@ -138,7 +142,7 @@ struct Edupage {
             let subject = idToSubject(subjectId: subjectId)
             
             let classroomIds = lesson["classroomids"]! as! [String]
-            let classroomId = classroomIds[0]
+            let classroomId = (classroomIds.count == 0) ? nil : classroomIds[0]
             let classroomNumber = idToClassroom(classroomId: classroomId)
             
             let start = lesson["starttime"]! as! String

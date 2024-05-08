@@ -70,7 +70,7 @@ struct Provider: IntentTimelineProvider {
         
         var edupage = Edupage()
         let timetable: Timetable? = try! _unsafeWait {
-            if configuration.username == nil || configuration.password == nil || configuration.subdomain == nil {
+            if configuration.username == nil || configuration.password == nil {
                 completion(SimpleEntry.error(s: "Invalid credentials"))
                 
                 return nil
