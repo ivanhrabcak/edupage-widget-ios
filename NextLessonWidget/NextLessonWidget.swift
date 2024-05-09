@@ -70,6 +70,7 @@ struct Provider: IntentTimelineProvider {
         print(configuration)
         
         var edupage = Edupage()
+
         let resultEntry: SimpleEntry? = try? _unsafeWait {
             let loginResult = await edupage.login(username: configuration.username ?? "", password: configuration.password ?? "", subdomain: configuration.subdomain ?? "")
             
