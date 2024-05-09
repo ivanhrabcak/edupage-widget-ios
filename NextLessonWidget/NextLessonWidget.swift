@@ -154,12 +154,18 @@ struct Provider: IntentTimelineProvider {
             }
         }
         
+        let calendar = Calendar(identifier: .iso8601)
+        
+        var previousLesson: Lesson? = nil
         for (i, lesson) in timetable!.lessons.enumerated() {
-            entries.append(
-                SimpleEntry(date: lesson.time.start, lesson: lesson)
-            )
-            
-            if i == timetable!.lessons.endIndex - 1 {
+            if i == timetable!.lessons.startIndex {
+                entries.append(
+                    SimpleEntry(
+                        date: calendar.startOfDay(for: lesson.time.start),
+                        lesson: lesson
+                    )
+                )
+            } else if i == timetable!.lessons.endIndex - 1 {
                 entries.append(
                     SimpleEntry(
                         date: lesson.time.end,
@@ -174,7 +180,13 @@ struct Provider: IntentTimelineProvider {
                         )
                     )
                 )
+            } else {
+                entries.append(
+                    SimpleEntry(date: previousLesson!.time.end, lesson: lesson)
+                )
             }
+            
+            previousLesson = lesson
         }
         
         if !entries.isEmpty {

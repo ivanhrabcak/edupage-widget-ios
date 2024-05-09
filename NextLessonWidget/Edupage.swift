@@ -57,20 +57,23 @@ struct Edupage {
     }
     
     mutating func login(username: String, password: String, subdomain: String?) async -> LoginResult {
-      
         if password == "" || username == "" {
             return .missingConfiguration
         }
+        
+        session.sessionConfiguration.httpCookieStorage?.removeCookies(since: Date.distantPast)
       
         let loginSubdomain = (subdomain == "" || subdomain == nil) ? "login1" : subdomain!
         
-        let requestUrl = "https://\(subdomain).edupage.org/login/index.php"
+        let requestUrl = "https://\(loginSubdomain).edupage.org/login/index.php"
         
         let response = await session.request(requestUrl)
             .serializingString()
             .response
         
         if response.error != nil {
+            print("csrfrequest error")
+            print(response.error)
             return .networkError
         }
         
@@ -102,6 +105,8 @@ struct Edupage {
             .response
         
         if loginResponse.error != nil {
+            print("loginrequest error")
+            print(loginResponse.error)
             return .networkError
         }
         

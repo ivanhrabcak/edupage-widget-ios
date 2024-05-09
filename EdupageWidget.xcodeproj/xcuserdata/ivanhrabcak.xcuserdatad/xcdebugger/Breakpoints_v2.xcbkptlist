@@ -34,50 +34,6 @@
             endingLineNumber = "73"
             landmarkName = "getTimeline(for:in:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6A964BAF-FFA3-41FF-80DD-A984B38A3DA5 - 4c7bc19b7288fe55"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NextLessonWidgetExtension.Provider.getTimeline(for: NextLessonWidgetExtension.ConfigurationIntentIntent, in: WidgetKit.TimelineProviderContext, completion: (WidgetKit.Timeline&lt;NextLessonWidgetExtension.SimpleEntry&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "NextLessonWidgetExtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanhrabcak/Repositories/EdupageWidget/NextLessonWidget/NextLessonWidget.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73">
-               </Location>
-               <Location
-                  uuid = "6A964BAF-FFA3-41FF-80DD-A984B38A3DA5 - 1aca731dd8767dfd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () async -&gt; Swift.Optional&lt;NextLessonWidgetExtension.SimpleEntry&gt; in NextLessonWidgetExtension.Provider.getTimeline(for: NextLessonWidgetExtension.ConfigurationIntentIntent, in: WidgetKit.TimelineProviderContext, completion: (WidgetKit.Timeline&lt;NextLessonWidgetExtension.SimpleEntry&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "NextLessonWidgetExtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanhrabcak/Repositories/EdupageWidget/NextLessonWidget/NextLessonWidget.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72">
-               </Location>
-               <Location
-                  uuid = "6A964BAF-FFA3-41FF-80DD-A984B38A3DA5 - 7ed1730e4e823155"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; Swift.Optional&lt;NextLessonWidgetExtension.SimpleEntry&gt; in NextLessonWidgetExtension.Provider.getTimeline(for: NextLessonWidgetExtension.ConfigurationIntentIntent, in: WidgetKit.TimelineProviderContext, completion: (WidgetKit.Timeline&lt;NextLessonWidgetExtension.SimpleEntry&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "NextLessonWidgetExtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ivanhrabcak/Repositories/EdupageWidget/NextLessonWidget/NextLessonWidget.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
