@@ -133,7 +133,7 @@ struct Provider: IntentTimelineProvider {
         
         if timetable == nil {
             switch timetableResult {
-                case .success(var t):
+                case .success(let t):
                     timetable = t
                 case .missingData:
                     timetable = nil
@@ -182,7 +182,7 @@ struct Provider: IntentTimelineProvider {
                 )
             } else {
                 entries.append(
-                    SimpleEntry(date: previousLesson!.time.end, lesson: lesson)
+                    SimpleEntry(date: previousLesson!.time.start, lesson: lesson)
                 )
             }
             

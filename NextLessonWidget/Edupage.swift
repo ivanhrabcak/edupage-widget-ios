@@ -17,7 +17,7 @@ struct Lesson {
     let name: String
     let classroom: String
     let time: LessonDuration
-    let lessonNumber: Int
+    var lessonNumber: Int
     
     static func nullLesson() -> Lesson {
         return Lesson(

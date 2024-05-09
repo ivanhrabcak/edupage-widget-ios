@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C3E266E2BED2BF1008F20B9 /* NextLessonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA882BEAB150009EA287 /* NextLessonWidget.swift */; };
+		5C3E266F2BED2C19008F20B9 /* Edupage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA9B2BEAB6B6009EA287 /* Edupage.swift */; };
+		5C3E26702BED2C2C008F20B9 /* NextLessonConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA932BEAB23E009EA287 /* NextLessonConfigurationIntent.intentdefinition */; };
 		5CE9AA5C2BEAB0DF009EA287 /* EdupageWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA5B2BEAB0DF009EA287 /* EdupageWidgetApp.swift */; };
 		5CE9AA5E2BEAB0DF009EA287 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9AA5D2BEAB0DF009EA287 /* ContentView.swift */; };
 		5CE9AA602BEAB0E0009EA287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE9AA5F2BEAB0E0009EA287 /* Assets.xcassets */; };
@@ -328,8 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C3E266E2BED2BF1008F20B9 /* NextLessonWidget.swift in Sources */,
 				5CE9AA5E2BEAB0DF009EA287 /* ContentView.swift in Sources */,
 				5CE9AA5C2BEAB0DF009EA287 /* EdupageWidgetApp.swift in Sources */,
+				5C3E266F2BED2C19008F20B9 /* Edupage.swift in Sources */,
+				5C3E26702BED2C2C008F20B9 /* NextLessonConfigurationIntent.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.hrabcak.EdupageWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -545,7 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.hrabcak.EdupageWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
